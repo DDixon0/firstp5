@@ -1,3 +1,5 @@
+// hello
+
 let b1x = 40;
 let b1y = 450;
 let b2x = 100;
