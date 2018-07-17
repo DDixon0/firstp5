@@ -39,6 +39,33 @@ button1();
 button2();
 button3();
 
+
+
+stroke(red,green,blue);
+fill(red,green,blue);
+
+    if(keyCode === 49 )
+    {
+
+        circle = true;
+        worm = false;
+        square = false;
+    }
+    else if(keyCode === 50)
+    {
+        square =true;
+        circle = false;
+        worm = false;
+    }        
+    else if(keyCode === 51 )
+    {
+        worm = true;
+        square = false;
+        circle = false;
+    }
+
+
+
 }
 
 function button1(){
@@ -138,35 +165,21 @@ function mouseClicked(){
 
 };
 
+function mouseDragged(){
+    if(circle){
+        ellipse(mouseX, mouseY, currentXSize, currentYSize);
 
-function mouseDragged() {
-    stroke(red,green,blue);
-    fill(red,green,blue);
+    }
+    else if (square){
+        rect(mouseX, mouseY, currentXSize, currentYSize);
+    }
+    else if (worm){
+        line(pmouseX,pmouseY,mouseX, mouseY);;
+    }
 
-        if(keyCode === 49 || circle)
-        {
 
-            circle = true;
-            worm = false;
-            square = false;
-            ellipse(mouseX, mouseY, currentXSize, currentYSize);
-        }
-        else if(keyCode === 50|| square)
-        {
-            square =true;
-            circle = false;
-            worm = false;
-            rect(mouseX, mouseY, currentXSize, currentYSize);
-        }        
-        else if(keyCode === 51 || worm)
-        {
-            worm = true;
-            square = false;
-            circle = false;
-            line(pmouseX,pmouseY,mouseX, mouseY);;
-        }
-    
-  }
+}
+
 
 
   
